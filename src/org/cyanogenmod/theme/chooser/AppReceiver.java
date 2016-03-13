@@ -19,10 +19,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.provider.ThemesContract;
 import org.cyanogenmod.theme.util.NotificationHelper;
-
-import java.util.Set;
 
 public class AppReceiver extends BroadcastReceiver {
 
@@ -32,9 +29,9 @@ public class AppReceiver extends BroadcastReceiver {
         String pkgName = uri != null ? uri.getSchemeSpecificPart() : null;
         String action = intent.getAction();
 
-        if (ThemesContract.Intent.ACTION_THEME_INSTALLED.equals(action)) {
+        if (cm.theme.content.Intent.ACTION_THEME_INSTALLED.equals(action)) {
             NotificationHelper.postThemeInstalledNotification(context, pkgName);
-        } else if (ThemesContract.Intent.ACTION_THEME_REMOVED.equals(action)) {
+        } else if (cm.theme.content.Intent.ACTION_THEME_REMOVED.equals(action)) {
             NotificationHelper.cancelNotificationForPackage(context, pkgName);
         }
     }

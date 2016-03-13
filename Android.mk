@@ -15,10 +15,10 @@ LOCAL_RESOURCE_DIR := $(addprefix $(LOCAL_PATH)/, res) \
 LOCAL_STATIC_JAVA_LIBRARIES := \
     android-support-v4 \
     android-support-v7-palette \
-    android-support-v7-cardview
+    android-support-v7-cardview \
+    cm.theme.platform.internal
 
 LOCAL_AAPT_FLAGS := \
     --auto-add-overlay \
     --extra-packages android.support.v7.cardview
-
 include $(BUILD_PACKAGE)

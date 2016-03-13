@@ -26,12 +26,12 @@ import android.graphics.BitmapRegionDecoder;
 import android.graphics.Color;
 import android.graphics.Rect;
 import android.net.Uri;
-import android.provider.ThemesContract;
-import android.provider.ThemesContract.ThemesColumns;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.ViewConfiguration;
+
+import cm.theme.providers.ThemesContract;
 
 import java.io.BufferedInputStream;
 import java.io.File;

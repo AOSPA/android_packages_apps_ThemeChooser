@@ -36,8 +36,6 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.provider.ThemesContract;
-import android.provider.ThemesContract.ThemesColumns;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.LoaderManager;
@@ -64,6 +62,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import cm.theme.providers.ThemesContract;
+import cm.theme.providers.ThemesContract.ThemesColumns;
+
 import org.cyanogenmod.theme.chooser.WallpaperAndIconPreviewFragment.IconInfo;
 import org.cyanogenmod.theme.chooser.WallpaperAndIconPreviewFragment;
 import org.cyanogenmod.theme.util.BootAnimationHelper;
@@ -75,7 +76,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import static android.content.pm.ThemeUtils.SYSTEM_TARGET_API;
+import static cm.theme.internal.util.ThemeUtils.SYSTEM_TARGET_API;
 
 public class ChooserBrowseFragment extends Fragment
         implements LoaderManager.LoaderCallbacks<Cursor> {
