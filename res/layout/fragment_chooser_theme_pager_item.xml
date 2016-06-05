@@ -165,7 +165,8 @@
                         android:id="@+id/chk_boot_anims"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/boot_anims" />
+                        android:text="@string/boot_anims"
+                        android:visibility="gone" />
 
                     <CheckBox
                         android:id="@+id/chk_ringtones"

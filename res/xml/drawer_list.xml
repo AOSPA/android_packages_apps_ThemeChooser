@@ -31,11 +31,13 @@
         app:title="@string/lock_screen"
         app:components="mods_lockscreen"
         app:icon="@drawable/ic_themes_lockwall" />
+<!--
     <DrawerItem
         app:id="@+id/boot_animations"
         app:title="@string/boot_anims"
         app:components="mods_bootanim"
         app:icon="@drawable/ic_themes_bootanim" />
+-->
     <DrawerItem
         app:id="@+id/sounds"
         app:title="@string/sounds"
