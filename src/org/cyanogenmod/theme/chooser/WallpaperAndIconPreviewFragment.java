@@ -30,7 +30,6 @@ import android.graphics.Color;
 import android.graphics.Point;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.provider.ThemesContract;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.LoaderManager.LoaderCallbacks;
 import android.support.v4.content.AsyncTaskLoader;
@@ -47,6 +46,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import cyanogenmod.providers.ThemesContract;
+
 import org.cyanogenmod.theme.util.IconPreviewHelper;
 import org.cyanogenmod.theme.util.Utils;
 
@@ -58,13 +59,17 @@ public class WallpaperAndIconPreviewFragment extends Fragment
     private static final ComponentName COMPONENT_DIALER =
             new ComponentName("com.android.dialer", "com.android.dialer.DialtactsActivity");
     private static final ComponentName COMPONENT_MESSAGING =
-            new ComponentName("com.android.mms", "com.android.mms.ui.ConversationList");
-    private static final ComponentName COMPONENT_CAMERANEXT =
-            new ComponentName("com.cyngn.cameranext", "com.android.camera.CameraLauncher");
+            new ComponentName("com.android.messaging",
+                "com.android.messaging.ui.conversationlist.ConversationListActivity");
     private static final ComponentName COMPONENT_CAMERA =
             new ComponentName("com.android.camera2", "com.android.camera.CameraLauncher");
+    private static final ComponentName COMPONENT_SNAP =
+            new ComponentName("org.cyanogenmod.snap", "com.android.camera.CameraActivity");
     private static final ComponentName COMPONENT_BROWSER =
             new ComponentName("com.android.browser", "com.android.browser.BrowserActivity");
+    private static final ComponentName COMPONENT_GELLO =
+            new ComponentName("org.cyanogenmod.gello.browser",
+                "com.android.browser.BrowserActivity");
     private static final ComponentName COMPONENT_SETTINGS =
             new ComponentName("com.android.settings", "com.android.settings.Settings");
     private static final ComponentName COMPONENT_CALENDAR =
@@ -72,7 +77,8 @@ public class WallpaperAndIconPreviewFragment extends Fragment
     private static final ComponentName COMPONENT_GALERY =
             new ComponentName("com.android.gallery3d", "com.android.gallery3d.app.GalleryActivity");
 
-    private static final String CAMERA_NEXT_PACKAGE = "com.cyngn.cameranext";
+    private static final String SNAP_PACKAGE = "org.cyanogenmod.snap";
+    private static final String GELLO_PACKAGE = "org.cyanogenmod.gello.browser";
 
     private static ComponentName[] sIconComponents;
 
@@ -154,12 +160,20 @@ public class WallpaperAndIconPreviewFragment extends Fragment
             } else {
                 // decide on which camera icon to use
                 try {
-                    if (pm.getPackageInfo(CAMERA_NEXT_PACKAGE, 0) != null) {
-                        sIconComponents[2] = COMPONENT_CAMERANEXT;
+                    if (pm.getPackageInfo(SNAP_PACKAGE, 0) != null) {
+                        sIconComponents[2] = COMPONENT_SNAP;
                     }
                 } catch (NameNotFoundException e) {
                     // default to COMPONENT_CAMERA
                 }
+            }
+
+            try {
+                if (pm.getPackageInfo(GELLO_PACKAGE, 0) != null) {
+                    sIconComponents[3] = COMPONENT_GELLO;
+                }
+            } catch (NameNotFoundException e) {
+                // default to COMPONENT_BROWSER
             }
 
         }
