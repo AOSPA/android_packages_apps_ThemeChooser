@@ -138,7 +138,7 @@ public class ChooserDetailFragment extends Fragment
         sComponentToId.put(ThemesColumns.MODIFIES_OVERLAYS, R.id.chk_overlays);
         sComponentToId.put(ThemesColumns.MODIFIES_STATUS_BAR, R.id.chk_status_bar);
         sComponentToId.put(ThemesColumns.MODIFIES_NAVIGATION_BAR, R.id.chk_nav_bar);
-        sComponentToId.put(ThemesColumns.MODIFIES_BOOT_ANIM, R.id.chk_boot_anims);
+        //sComponentToId.put(ThemesColumns.MODIFIES_BOOT_ANIM, R.id.chk_boot_anims);
         sComponentToId.put(ThemesColumns.MODIFIES_FONTS, R.id.chk_fonts);
         sComponentToId.put(ThemesColumns.MODIFIES_ICONS, R.id.chk_icons);
         sComponentToId.put(ThemesColumns.MODIFIES_LAUNCHER, R.id.chk_wallpaper);
